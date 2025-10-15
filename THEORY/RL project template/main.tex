@@ -1,0 +1,189 @@
+\documentclass{article}
+
+% Recommended, but optional, packages for figures and better typesetting:
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{booktabs} 
+
+% hyperref makes hyperlinks in the resulting PDF.
+% If your build breaks (sometimes temporarily if a hyperlink spans a page)
+% please comment out the following usepackage line and replace
+% \usepackage{icml2021} with \usepackage[nohyperref]{icml2021} above.
+\usepackage{hyperref}
+
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+\usepackage[accepted]{icml2021}
+
+\icmltitlerunning{RL project submission template}
+
+\begin{document}
+
+\twocolumn[
+\icmltitle{RL project submission template}
+
+\icmlsetsymbol{equal}{*}
+
+\begin{icmlauthorlist}
+\icmlauthor{Tyler Durden}{}
+\end{icmlauthorlist}
+
+\icmlkeywords{Machine Learning, UniPD}
+
+\vskip 0.3in
+]
+
+\printAffiliationsAndNotice{\icmlEqualContribution} % 
+
+\begin{abstract}
+This document provides a basic paper template and submission guidelines.
+Abstracts should be a single paragraph, ideally between 4--6 sentences long, briefly describing the proposed solution.
+\end{abstract}
+
+\section{What we really want}
+Please, do not spend 3 pages explaining the definition of RL or what is a Q-function, we already know that part (hopefully). Instead, we are interested in your reasoning, so why dod you choose that reward function, that algorithm, that state representation, or what not. Briefly describe the algorithm you plan to use, but do not write a whole paper on that. Always keep in mind that \textbf{a picture is worth a 1000 words}. We appreciate math and plots, not 3 pages long monologues. We also quite appreciate summarization abilities and structured papers, so don't be scared to use \texttt{\textbackslash section}, \texttt{\textbackslash subsection} and \texttt{\textbackslash subsubsection}
+
+\section{Brief guidelines list}
+\label{submission}
+
+Submission are performed via email, but if the zip file is too large, feel free to upload it on Google Drive and share the link to it.
+
+The guidelines below are extremely suggested, and if you don't change anything about this template, they are all fullfilled:
+\begin{itemize}
+\item Submissions must be in PDF\@.
+\item Submitted papers can be up to six pages long, not including references, plus unlimited space for references. Any paper exceeding this length will automatically be rejected. 
+\item Your paper should be in \textbf{10 point Times font}.
+\item Make sure your PDF file only uses Type-1 fonts.
+\item Place figure captions \emph{under} the figure (and omit titles from inside
+    the graphic file itself). Place table captions \emph{over} the table. (suggested)
+\item References must include page numbers whenever possible and be as complete
+    as possible. 
+\item Do not alter the style template; in particular, do not compress the paper
+    format by reducing the vertical spaces.
+\end{itemize}
+
+\subsection{Submitting solutions}
+
+\textbf{Project Deadline:} The deadline for project submission is strict, and it's the one reported on the slides. You can submit it anytime after you pass the theoretical exam, up to September 2025 (except if you pass the exam in the last call). No exceptions will be made; no amount of ``please" will be sufficient.
+
+\textbf{Project modality:} To submit your solution, you can send us an email, but if the submission is too heavy, upload it on GDrive and share the link to it via email. Please add ``[RL submission]" in the object of the email, and send it to ALL the following emails, but with the appropriate main receiver:
+\begin{itemize}
+    \item Briscola \& Snake : \\\url{alberto.sinigaglia@phd.unipd.it}
+    \item Robotics : \\\url{niccolo.turcato@phd.unipd.it}
+    \item Autonomous Driving : \\\url{matteo.cederle@phd.unipd.it}
+\end{itemize}
+Also, add \url{gianantonio.susto@unipd.it} to the receivers.
+
+\textbf{Project clarifications:} For clarifications, please refer to the respective PhD of the interested project:
+\begin{itemize}
+    \item Briscola \& Snake : \\\url{alberto.sinigaglia@phd.unipd.it}
+    \item Robotics : \\\url{niccolo.turcato@phd.unipd.it}
+    \item Autonomous Driving : \\\url{matteo.cederle@phd.unipd.it}
+\end{itemize}
+
+
+\textbf{Graphics files:} please use graphics with a reasonable size, and included from an appropriate format. Use vector formats (.eps/.pdf) for plots, lossless bitmap formats (.png) for raster graphics with sharp lines, and jpeg for photo-like images. For \texttt{matplotlib} refer to \href{https://stackoverflow.com/a/38895987/12361700}{this link}
+
+
+\subsection{Partitioning the Text}
+
+You should organize your paper into sections and paragraphs to help readers place a structure on the material and understand its contributions.
+
+\begin{figure}[ht]
+\vskip 0.2in
+\begin{center}
+\centerline{\includegraphics[width=\columnwidth]{icml_numpapers}}
+\caption{Historical locations and number of accepted papers for International
+Machine Learning Conferences (ICML 1993 -- ICML 2008) and International
+Workshops on Machine Learning (ML 1988 -- ML 1992). At the time this figure was
+produced, the number of accepted papers for ICML 2008 was unknown and instead
+estimated.}
+\label{icml-historical}
+\end{center}
+\vskip -0.2in
+\end{figure}
+
+\subsection{Figures}
+
+You may want to include figures in the paper to illustrate
+your approach and results. Such artwork should be centered,
+legible, and separated from the text. Please make sure all included figures are cited like
+Figure~\ref{icml-historical} at some point in your text.  You may float figures to the top or
+bottom of a column, and you may set wide figures across both columns
+(use the environment \texttt{figure*} in \LaTeX). Always place
+two-column figures at the top or bottom of the page.
+
+\subsection{Algorithms}
+
+If you are using \LaTeX, please use the ``algorithm'' and ``algorithmic''
+environments to format pseudocode. These require
+the corresponding stylefiles, algorithm.sty and
+algorithmic.sty, which are supplied with this package.
+Algorithm~\ref{alg:example} shows an example.
+
+\begin{algorithm}[tb]
+   \caption{Bubble Sort}
+   \label{alg:example}
+\begin{algorithmic}
+   \STATE {\bfseries Input:} data $x_i$, size $m$
+   \REPEAT
+   \STATE Initialize $noChange = true$.
+   \FOR{$i=1$ {\bfseries to} $m-1$}
+   \IF{$x_i > x_{i+1}$}
+   \STATE Swap $x_i$ and $x_{i+1}$
+   \STATE $noChange = false$
+   \ENDIF
+   \ENDFOR
+   \UNTIL{$noChange$ is $true$}
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Tables}
+
+You may also want to include tables that summarize material. Like
+figures, these should be centered, legible, and numbered consecutively. Refer to Table~\ref{sample-table} for an example, and cite all tables at some point in the text.
+% Note use of \abovespace and \belowspace to get reasonable spacing
+% above and below tabular lines.
+
+\begin{table}[t]
+\caption{Classification accuracies for naive Bayes and flexible
+Bayes on various data sets.}
+\label{sample-table}
+\vskip 0.15in
+\begin{center}
+\begin{small}
+\begin{sc}
+\begin{tabular}{lcccr}
+\toprule
+Data set & Naive & Flexible & Better? \\
+\midrule
+Breast    & 95.9$\pm$ 0.2& 96.7$\pm$ 0.2& $\surd$ \\
+Cleveland & 83.3$\pm$ 0.6& 80.0$\pm$ 0.6& $\times$\\
+Glass2    & 61.9$\pm$ 1.4& 83.8$\pm$ 0.7& $\surd$ \\
+Credit    & 74.8$\pm$ 0.5& 78.3$\pm$ 0.6&         \\
+Horse     & 73.3$\pm$ 0.9& 69.7$\pm$ 1.0& $\times$\\
+Meta      & 67.1$\pm$ 0.6& 76.5$\pm$ 0.5& $\surd$ \\
+Pima      & 75.1$\pm$ 0.6& 73.9$\pm$ 0.5&         \\
+Vehicle   & 44.9$\pm$ 0.6& 61.5$\pm$ 0.4& $\surd$ \\
+\bottomrule
+\end{tabular}
+\end{sc}
+\end{small}
+\end{center}
+\vskip -0.1in
+\end{table}
+
+
+\subsection{Citations and References}
+To cite papers, use \cite{Samuel59}. They are not mandatory, but they are pretty useful if you plan to publish your solution on some public repository so that other people can understand what you mean.
+
+% In the unusual situation where you want a paper to appear in the
+% references without citing it in the main text, use \nocite
+\nocite{langley00}
+
+\bibliography{main}
+\bibliographystyle{icml2021}
+
+
+\end{document}
