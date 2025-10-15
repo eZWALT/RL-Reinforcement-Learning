@@ -1,0 +1,6 @@
+streamlit==1.50.0
+transformers==4.57.0
+trl==0.23.1
+scikit-learn==1.7.2
+pandas==2.3.3
+loguru==0.7.3
