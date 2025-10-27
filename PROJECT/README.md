@@ -19,6 +19,15 @@ The directory is structured in the following way:
 - **notebooks**:
 - **resources**: 
 
+## TODO
+
+- GRPO run & test 
+- PPO run & test
+- Experiment with the final models :)
+- Create README for the 3 huggingface models (Symmetric)
+- Overleaf writing
+- LLM as judge evaluation (TEST) ???? MAYBE
+
 ## Usage 
 
 > WARNING: Its recommended to create a virtual environment  (venv / pyenv) to ensure full reproducibility, using python 3.12.11 and the fixed requirements inside of requirements.txt file.
